@@ -1,6 +1,6 @@
 import React  from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Login, Menu } from "./pages";
+import { Login, Menu, Responsavel, Filho } from "./pages";
 
 function App() {
   return (
@@ -15,6 +15,18 @@ function App() {
         path="/menu"
         element={
           <Menu/>
+        }
+      />
+      <Route
+        path="/responsavel"
+        element={
+          <Responsavel/>
+        }
+      />
+      <Route
+        path="/filho"
+        element={
+          <Filho/>
         }
       />
       <Route path="*" element={<Navigate to="/login" replace />} />

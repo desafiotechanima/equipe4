@@ -1,5 +1,5 @@
 import React from 'react';
-import { Background, NavBar, Content, Item, LinkPage, CardTitle, FormLogin, Input, TitleForm, Button, Title } from './styled';
+import { Background, NavBar, Content, Item, LinkPage, CardTitle, Title } from './styled';
 
 function Menu(props) {
   return (

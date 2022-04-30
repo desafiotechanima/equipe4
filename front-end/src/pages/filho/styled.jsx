@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Container, Row, Col } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Container, Row, Col, Modal } from "react-bootstrap";
+import YouTube from "react-youtube";
 
 export const Background = styled(Container)`
   display: flex;
@@ -12,6 +12,7 @@ export const Background = styled(Container)`
   max-width: 0;
   margin: 0;
   padding-top: 60px;
+  width: 100%;
 `;
 
 export const NavBar = styled(Col)`
@@ -41,43 +42,19 @@ export const Content = styled(Row)`
   gap: 20px;
 `;
 
-export const Item = styled(Col)`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 300px;
-height: 200px;
-background-color: #5D9EEB;
-color: white;
-border-radius: 5px;
-margin: 10px 0;
-transition: all 0.1s linear;
-
-&:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-  background-color: #83b6f2;
+export const Button = styled.button`
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #5D9EEB;
   color: white;
-}
-`;
-
-export const LinkPage = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: white;
-  width: 100%;
-  height: 100%;
-
-  &:hover{
-    color: white;
-  }
-`;
-
-export const CardTitle = styled.h1`
-  font-size: 20px;
-  font-family: bahnschrift;
+  font-family: arial;
   font-weight: bold;
-  margin: 0 20px;
+  width: 100px;
+  height: 100px;
+`;
+
+export const Confirmation = styled(Modal)``;
+
+export const YouTubePlayer = styled(YouTube)`
 `;

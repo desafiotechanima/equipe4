@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link } from 'react-router-dom';
 
 export const Background = styled(Container)`
   display: flex;
@@ -41,43 +40,35 @@ export const Content = styled(Row)`
   gap: 20px;
 `;
 
-export const Item = styled(Col)`
-display: flex;
-justify-content: center;
-align-items: center;
-width: 300px;
-height: 200px;
-background-color: #5D9EEB;
-color: white;
-border-radius: 5px;
-margin: 10px 0;
-transition: all 0.1s linear;
-
-&:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-  background-color: #83b6f2;
-  color: white;
-}
+export const Input = styled.input`
+  border:none;
+  background-color: #EEEEEE;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 10px;
 `;
 
-export const LinkPage = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
+export const Button = styled.button`
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
   color: white;
-  width: 100%;
-  height: 100%;
+  font-family: arial;
+  font-weight: bold;
+  padding: 5px 30px;
+  margin-top: 40px;
+
+  transition: all 0.1s linear;
 
   &:hover{
-    color: white;
+    background-color: #555555;
   }
 `;
 
-export const CardTitle = styled.h1`
-  font-size: 20px;
-  font-family: bahnschrift;
-  font-weight: bold;
-  margin: 0 20px;
+export const Log = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  overflow: auto;
 `;
