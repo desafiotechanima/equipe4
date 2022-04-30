@@ -6,9 +6,11 @@ class LoginController < ApplicationController
   end
 
   def logar
+    debugger
+    x = ''
     email, password = params_login
-    @user = Administrator.where(email: email)
-    return mgs_error_login if @user.empty?
+    @user = Usuario.where(email: email)
+    return render json: {}, status: :forbidden if @user.empty?
 
     @user = @user.first
     confirm_password = BCrypt::Password.new(@user.password) == password
@@ -29,23 +31,15 @@ class LoginController < ApplicationController
     end
   end
 
-private 
+  private
 
-def params_login
-  email = params['login']['email']
-  password = params['login']['password']
-  valida_form = LoginHelper.verify(email, password)
-
-  if valida_form
-    mgs_error_login
-  else
+  def params_login
+    email = params['email']
+    password = params['password']
     [email, password]
   end
-end
 
-def mgs_error_login
-  flash[:erro] = 'Email ou senha inválidos'
-  redirect_to login_path
-end
-
+  def mgs_error_login
+    render json: 'Email ou senha inválidos', status: :unprocessable_entity
+  end
 end
