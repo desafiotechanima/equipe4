@@ -6,8 +6,6 @@ class LoginController < ApplicationController
   end
 
   def logar
-    debugger
-    x = ''
     email, password = params_login
     @user = Usuario.where(email: email)
     return render json: {}, status: :forbidden if @user.empty?

@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   post '/login', to: 'login#logar'
   get '/logout', to: 'login#logout'
 
+  get '/search', to: 'search#show'
+  post '/search', to: 'search#create'
+
 end
